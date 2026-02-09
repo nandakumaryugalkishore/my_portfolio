@@ -7,7 +7,7 @@ export const TOTAL_SCREENS = [
         component: Home
     }
 ];
-export const GET_SCREE_INDEX = (screen_name)=>{
+export const GET_SCREEN_INDEX = (screen_name)=>{
     if(!screen_name) return -1
     for(let i=0; i <TOTAL_SCREENS.lenght;i++){
         if(TOTAL_SCREENS[i].screen_name === screen_name) return i;
