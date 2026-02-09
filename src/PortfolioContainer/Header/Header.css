@@ -30,8 +30,7 @@
 
 }
 .header-option-separator{
-    margin: 0 50px 0 0;
-    color: var(--white);
+  margin: 0 50px;   /* desktop */
 }
 .selected-header-option{
     color: var(--dark-orange);
@@ -67,7 +66,8 @@
         transition: all 0.8s ease-out;
     }
     .header-option-separator{
-        margin: 0;
+        margin-right: 0;
+        margin-bottom: 30px;
     }
     .selected-header-option{
         color: var(--white);
