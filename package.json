@@ -1,0 +1,30 @@
+{
+  "name": "portfolioproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix portfolio",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nandakumaryugalkishore/my_portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nandakumaryugalkishore/my_portfolio/issues"
+  },
+  "homepage": "https://github.com/nandakumaryugalkishore/my_portfolio#readme",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.5",
+    "nodemon": "^3.1.14"
+  }
+}
