@@ -19,4 +19,6 @@ app.use(cors({
 app.use("/api", contactRoute)
 
 const port = process.env.PORT || 5001;
-app.listen(port, console.log(`server listening to port ${port} only`))
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});
