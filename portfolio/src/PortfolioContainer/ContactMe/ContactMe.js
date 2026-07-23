@@ -40,11 +40,14 @@ const phoneNumber = "+18623007485";
     try {
       setBoolean(true);
   
-      const res = await axios.post("/api/contact", {
-        name,
-        email,
-        message
-      });
+     const res = await axios.post(
+  "https://portfolio-api-ia66.onrender.com/api/contact",
+  {
+    name,
+    email,
+    message
+  }
+);
   
       if (res.status === 200) {
         setBanner(res.data.msg);
