@@ -1,62 +1,46 @@
 const router = require('express').Router()
-const nodemailer = require('nodemailer')
+const { Resend } = require("resend");
 require('dotenv').config();
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-router.post('/contact',(req,res)=>{
+router.post('/contact', async (req,res)=>{
     let data = req.body
     if (!data.name || !data.email || !data.message) {
         return res.status(400).json({ msg: "Please fill all the fields" });
     }
-    console.log("BODY:", req.body);
-    console.log("HEADERS:", req.headers);
-console.log("BODY:", req.body);
-      let smtpTransporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    requireTLS: true,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-});
+    try {
+    const response = await resend.emails.send({
+        from: "Portfolio Contact <onboarding@resend.dev>",
+        to: "nandakumaryugalkishore@gmail.com",
+        replyTo: data.email,
+        subject: `Message from ${data.name}`,
+        html: `
+            <h2>Portfolio Contact Form</h2>
 
-smtpTransporter.verify((error, success) => {
-    if (error) {
-        console.error("VERIFY ERROR:", error);
-    } else {
-        console.log("SMTP Server is ready");
-    }
-});
-        console.log("ENV USER:", process.env.EMAIL_USER);
-console.log("ENV PASS:", process.env.EMAIL_PASS);
-        let mailOptions = {
-            from: data.email,
-            to: 'nandakumaryugalkishore@gmail.com',
-            subject: `message from ${data.name}`,
-            html:`
-            <h3>Information</h3>
-            <ul>
-                <li>Name: ${data.name}</li>
-                <li>Email: ${data.email}</li>
-            </ul>    
-            <h3>Message</h3>
+            <p><strong>Name:</strong> ${data.name}</p>
+
+            <p><strong>Email:</strong> ${data.email}</p>
+
+            <p><strong>Message:</strong></p>
+
             <p>${data.message}</p>
-            `
-        }
+        `
+    });
 
-        smtpTransporter.sendMail(mailOptions,(error)=>{
-            try {
-                if (error) {
-                    console.error("MAIL ERROR:", error);
-                    return res.status(500).json({ msg: "Error sending email" });
-                }
-                res.status(200).json({msg:"Message sent Successfully"})
-            } catch (error) {
-                if(error) return res.status(500).json({msg:"There is server error"})
-            }
-        })
+    console.log(response);
 
-    
+    return res.status(200).json({
+        msg: "Message sent successfully"
+    });
+
+} catch (err) {
+
+    console.error(err);
+
+    return res.status(500).json({
+        msg: "Unable to send email"
+    });
+
+}
 })
 module.exports=router
