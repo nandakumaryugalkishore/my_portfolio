@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+portfolio/node_modules/
+
+# Environment variables
+.env
+
+# Build output
+portfolio/build/
+build/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
