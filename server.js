@@ -8,15 +8,9 @@ const contactRoute = require('./route/contactRoute')
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // 🔥 ADD THIS
-app.use(cors({
-    origin: [
-      "http://localhost:3000",
-      "https://yugalkishore.tech"
-    ],
-    methods: ["GET", "POST"],
-    credentials: true
-  }));
-app.use("/api", contactRoute)
+const cors = require("cors");
+
+app.use(cors());
 
 const port = process.env.PORT || 5001;
 app.listen(port, () => {
