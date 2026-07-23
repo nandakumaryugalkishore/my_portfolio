@@ -10,15 +10,24 @@ router.post('/contact',(req,res)=>{
     console.log("BODY:", req.body);
     console.log("HEADERS:", req.headers);
 console.log("BODY:", req.body);
-        let smtpTransporter = nodemailer.createTransport({
-            service:'Gmail',
-            port:465,
-            auth:{
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS
-            }
-            
-        })
+      let smtpTransporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    requireTLS: true,
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+});
+
+smtpTransporter.verify((error, success) => {
+    if (error) {
+        console.error("VERIFY ERROR:", error);
+    } else {
+        console.log("SMTP Server is ready");
+    }
+});
         console.log("ENV USER:", process.env.EMAIL_USER);
 console.log("ENV PASS:", process.env.EMAIL_PASS);
         let mailOptions = {
