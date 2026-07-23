@@ -101,7 +101,7 @@ router.post("/contact", async (req, res) => {
           <p>
             🌐 <a href="https://www.yugalkishore.tech">Portfolio</a><br>
             💼 <a href="https://www.linkedin.com/in/nyugalk/">LinkedIn</a><br>
-            📧 contact@yugalkishore.tech
+            📧 nandakumaryugalkishore@gmail.com
           </p>
 
           <br>
