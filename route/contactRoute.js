@@ -10,7 +10,7 @@ router.post('/contact', async (req,res)=>{
     }
     try {
     const response = await resend.emails.send({
-        from: "Portfolio Contact <onboarding@resend.dev>",
+        from: "Portfolio Contact <noreply@yugalkishore.tech>",
         to: "nandakumaryugalkishore@gmail.com",
         replyTo: data.email,
         subject: `Message from ${data.name}`,
