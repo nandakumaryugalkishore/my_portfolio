@@ -4,6 +4,7 @@ const cors = require("cors")
 const path = require("path")
 
 const contactRoute = require('./route/contactRoute')
+app.use("/api", contactRoute);
 
 const app = express();
 app.use(express.json());
