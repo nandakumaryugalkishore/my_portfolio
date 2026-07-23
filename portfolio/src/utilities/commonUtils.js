@@ -18,7 +18,7 @@ export const TOTAL_SCREENS = [
     component: Resume,
   },
   {
-    screen_name: "Contact",
+    screen_name: "ContactMe",
     component: ContactMe,
   },
   
