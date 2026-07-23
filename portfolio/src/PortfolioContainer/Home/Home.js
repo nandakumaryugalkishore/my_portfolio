@@ -11,7 +11,6 @@ export default function Home() {
     <div className='home-container'>
         <Header/>
         <Profile/>
-        <ContactMe/>
         <Footer/>
         
 
