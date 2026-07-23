@@ -8,7 +8,6 @@ const contactRoute = require('./route/contactRoute')
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // 🔥 ADD THIS
-const cors = require("cors");
 
 app.use(cors());
 
