@@ -3,6 +3,7 @@ import Header from '../Header/Header'
 import Profile from '../Profile/Profile'
 import Footer from '../Footer/Footer'
 import './Home.css'
+import ContactMe from '../ContactMe/ContactMe'
 
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
         <Header/>
         <Profile/>
         <Footer/>
+        <ContactMe/>
     </div>
   )
 }
