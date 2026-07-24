@@ -180,7 +180,7 @@ https://www.yugalkishore.tech
 https://www.linkedin.com/in/nyugalk/
 
 📧 Email  
-contact@yugalkishore.tech
+nandakumaryugalkishore@gmail.com
 
 ---
 
