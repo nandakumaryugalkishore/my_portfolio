@@ -21,7 +21,7 @@ export default function AboutMe(props) {
 
   const SCREEN_CONSTANTS = {
     description:
-      "Software Engineer with 5+ years of professional experience designing, developing, and implementing scalable, secure, and high-performance applications in financial and enterprise environments. Strong expertise in Java, Spring Boot microservices, RESTful APIs, and Spring Security, with hands-on experience across the full Software Development Life Cycle (SDLC). Proven ability to collaborate with cross-functional teams, participate in design and code reviews, troubleshoot production issues, and deliver resilient solutions aligned with enterprise architectural standards.",
+      "Software Engineer with 4+ years of professional experience designing, developing, and implementing scalable, secure, and high-performance applications in financial and enterprise environments. Strong expertise in Java, Spring Boot microservices, RESTful APIs, and Spring Security, with hands-on experience across the full Software Development Life Cycle (SDLC). Proven ability to collaborate with cross-functional teams, participate in design and code reviews, troubleshoot production issues, and deliver resilient solutions aligned with enterprise architectural standards.",
     highlights: {
       bullets: [
         "Full-stack development with Java, Spring Boot, React",
