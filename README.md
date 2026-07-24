@@ -6,12 +6,6 @@ A modern, responsive portfolio website showcasing my experience, projects, techn
 
 ---
 
-## 📸 Preview
-
-![Portfolio Preview](./portfolio/src/assets/Home/profile-photo.jpg)
-
----
-
 # ✨ Features
 
 - Responsive and modern UI
